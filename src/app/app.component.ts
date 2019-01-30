@@ -1,3 +1,4 @@
+import { PeliculasService } from './services/peliculas.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'moviesapp';
+
+  constructor(public _ps: PeliculasService) {
+    this._ps.getPopulares().subscribe( data => console.log(data.results));
+  }
 }
