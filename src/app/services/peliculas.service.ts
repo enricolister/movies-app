@@ -7,6 +7,10 @@ import { map } from 'rxjs/operators';
 })
 export class PeliculasService {
 
+  public movie: {
+    
+  }
+
   private apiKey: string = "8a0399c51e10aac452653b58ad2308f6";
   private urlMovieDb: string = "https://api.themoviedb.org/3";
 
@@ -19,6 +23,12 @@ export class PeliculasService {
   
   buscarPelicula(texto: string) {
     let url = `${this.urlMovieDb}/search/movie?query=${ texto }&sort_by=popularity.desc&api_key=${this.apiKey}&language=es`;
+    return this._http.jsonp(url, 'callback=JSONP_CALLBACK').pipe(map( (res: any) => res ));
+  }
+
+  showMovie(id: string) {
+    let url = `${this.urlMovieDb}/movie/${id}?api_key=${this.apiKey}&language=es`;
+    //let url = 'https://api.themoviedb.org/3/movie/375588?api_key=8a0399c51e10aac452653b58ad2308f6&language=es';
     return this._http.jsonp(url, 'callback=JSONP_CALLBACK').pipe(map( (res: any) => res ));
   }
 }
