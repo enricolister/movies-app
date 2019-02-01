@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +11,7 @@ import { PopularesComponent } from './components/populares/populares.component';
 import { PopNinosComponent } from './components/pop-ninos/pop-ninos.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { PeliculaDetailComponent } from './components/pelicula-detail/pelicula-detail.component';
+import { BusquedaComponent } from './components/busqueda/busqueda.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,15 @@ import { PeliculaDetailComponent } from './components/pelicula-detail/pelicula-d
     PopularesComponent,
     PopNinosComponent,
     LoadingComponent,
-    PeliculaDetailComponent
+    PeliculaDetailComponent,
+    BusquedaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -23,7 +23,8 @@ export class PeliculaDetailComponent implements OnInit {
       if (pre_backpath === 'populares' || pre_backpath === 'populares_ninos' || pre_backpath === 'en_el_cine' ) {
         this.backpath = '/home/' + pre_backpath;
       } else {
-        this.backpath = pre_backpath;
+        let re = /-/gi;
+        this.backpath = '/' + pre_backpath.replace(re, "/");
       }
 
       this._ps.showMovie(this.id).subscribe( data => {

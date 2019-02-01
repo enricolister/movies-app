@@ -1,3 +1,4 @@
+import { BusquedaComponent } from './components/busqueda/busqueda.component';
 import { PopularesComponent } from './components/populares/populares.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
@@ -15,6 +16,7 @@ const routes: Routes = [
     { path: '**', pathMatch: 'full', redirectTo: 'en_el_cine' }
     ]
   },
+  { path: 'busca/:texto', component: BusquedaComponent },
   { path: 'pelicula/:id/:backpath', component: PeliculaDetailComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];

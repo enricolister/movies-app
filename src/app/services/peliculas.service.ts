@@ -25,6 +25,11 @@ export class PeliculasService {
     let url = `${this.urlMovieDb}/discover/movie?sort_by=popularity.desc&api_key=${this.apiKey}&language=es`;
     return this._http.jsonp(url, 'callback=JSONP_CALLBACK').pipe(map( (res: any) => res ));
   }
+
+  getPopularesNinos() {
+    let url = `${this.urlMovieDb}/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=${this.apiKey}&language=es`;
+    return this._http.jsonp(url, 'callback=JSONP_CALLBACK').pipe(map( (res: any) => res ));
+  }
   
   buscarPelicula(texto: string) {
     let url = `${this.urlMovieDb}/search/movie?query=${ texto }&sort_by=popularity.desc&api_key=${this.apiKey}&language=es`;

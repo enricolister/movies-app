@@ -22,10 +22,12 @@
         <h3>Sinopsis:</h3>
         <p>{{ pelicula.overview }}</p>
         <h3>Generos:</h3>
-        <p><span *ngFor="let genero of pelicula.genres">{{ genero.name }}, </span></p>
+        <p><span *ngFor="let genero of pelicula.genres; let last = last">{{ genero.name }}{{ last ? '' : ', '}}</span></p>
         <h3>Evaluacion:</h3>
         <p>{{ pelicula.vote_average }} / 10</p>
-        <p><img [src]="bigPosterUrl + pelicula.backdrop_path" class="card-img-top" alt="Fotogramma del film"></p>
+
+        <p *ngIf="pelicula.backdrop_path"><img [src]="bigPosterUrl + pelicula.backdrop_path" class="card-img-top" alt="Fotogramma del film"></p>
+
       </div>
     </div>
 
