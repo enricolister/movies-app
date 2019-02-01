@@ -12,6 +12,7 @@ export class PeliculaDetailComponent implements OnInit {
   private id: string;
   private backpath: string;
   private loading = true;
+  private bigPosterUrl: string = 'http://image.tmdb.org/t/p/w500';
   private pelicula: {};
 
   constructor(private router: ActivatedRoute, private _ps: PeliculasService) {

@@ -16,6 +16,11 @@ export class PeliculasService {
 
   constructor(private _http: HttpClient) { }
 
+  getAhoraEnElCine() {
+    let url = `${this.urlMovieDb}/movie/now_playing?api_key=${this.apiKey}&language=es&page=1&region=it`;
+    return this._http.jsonp(url, 'callback=JSONP_CALLBACK').pipe(map( (res: any) => res ));
+  }
+  
   getPopulares() {
     let url = `${this.urlMovieDb}/discover/movie?sort_by=popularity.desc&api_key=${this.apiKey}&language=es`;
     return this._http.jsonp(url, 'callback=JSONP_CALLBACK').pipe(map( (res: any) => res ));

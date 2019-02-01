@@ -2,7 +2,9 @@
     
     <app-loading *ngIf="loading"></app-loading>
 
-    <div *ngIf="!loading" class="row mt-4">
+    <div *ngIf="!loading">
+
+    <div class="row mt-4">
       <div class="col-10">
         <h1>{{ pelicula.title }}</h1>
       </div>
@@ -10,5 +12,23 @@
           <button type="button" [routerLink]="[backpath]" class="btn btn-outline-success float-right">Regresar</button>
       </div>
     </div>
+
+    <div class="row mt-4">
+      <div class="col-lg-6">
+          <img [src]="bigPosterUrl + pelicula.poster_path" class="card-img-top" [alt]="pelicula.title">
+      </div>
+      <div class="col-lg-6">
+        <h4>{{ pelicula.release_date | slice:0:4 }} - {{ pelicula.original_language | uppercase }}</h4>
+        <h3>Sinopsis:</h3>
+        <p>{{ pelicula.overview }}</p>
+        <h3>Generos:</h3>
+        <p><span *ngFor="let genero of pelicula.genres">{{ genero.name }}, </span></p>
+        <h3>Evaluacion:</h3>
+        <p>{{ pelicula.vote_average }} / 10</p>
+        <p><img [src]="bigPosterUrl + pelicula.backdrop_path" class="card-img-top" alt="Fotogramma del film"></p>
+      </div>
+    </div>
+
+  </div>
 
 </div>

@@ -1,3 +1,17 @@
-<p>
-  en-el-cine works!
-</p>
+<div class="container">
+    
+    <app-loading *ngIf="loading"></app-loading>
+    
+      <div class="card-columns mt-3" *ngIf="!loading">
+    
+          <div *ngFor="let pelicula of peliculas" class="card">
+              <a [routerLink]="['/pelicula', pelicula.id, 'en-el-cine']"><img [src]="basePosterUrl + pelicula.poster_path" class="card-img-top" [alt]="pelicula.title"></a>
+              <div class="card-body">
+                <h5 class="card-title">{{ pelicula.title }}</h5>
+                <p class="card-text">{{ pelicula.release_date | slice:0:4 }}, Evaluacion: {{ pelicula.vote_average }}</p>
+              </div>
+          </div>
+    
+      
+      </div>
+    </div>    
