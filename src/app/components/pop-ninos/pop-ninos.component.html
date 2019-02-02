@@ -5,7 +5,10 @@
       <div class="card-columns mt-3" *ngIf="!loading">
     
           <div *ngFor="let pelicula of peliculas" class="card">
-              <a [routerLink]="['/pelicula', pelicula.id, 'populares_ninos']"><img [src]="basePosterUrl + pelicula.poster_path" class="card-img-top" [alt]="pelicula.title"></a>
+              <a [routerLink]="['/pelicula', pelicula.id, 'populares_ninos']">
+                <img *ngIf="pelicula.poster_path" [src]="basePosterUrl + pelicula.poster_path" class="card-img-top" [alt]="pelicula.title">
+                <h4 class="text-center mt-3" *ngIf="!pelicula.poster_path">(Poster no disponible)</h4>
+            </a>
               <div class="card-body">
                 <h5 class="card-title">{{ pelicula.title }}</h5>
                 <p class="card-text">{{ pelicula.release_date | slice:0:4 }}, Evaluacion: {{ pelicula.vote_average }}</p>

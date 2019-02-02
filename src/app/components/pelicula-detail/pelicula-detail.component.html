@@ -15,8 +15,9 @@
 
     <div class="row mt-4">
       <div class="col-lg-6">
-          <img [src]="bigPosterUrl + pelicula.poster_path" class="card-img-top" [alt]="pelicula.title">
-      </div>
+          <img *ngIf="pelicula.poster_path" [src]="bigPosterUrl + pelicula.poster_path" class="card-img-top" [alt]="pelicula.title">
+          <h4 *ngIf="!pelicula.poster_path">(Poster no disponible)</h4>
+        </div>
       <div class="col-lg-6">
         <h4>{{ pelicula.release_date | slice:0:4 }} - {{ pelicula.original_language | uppercase }}</h4>
         <h3>Sinopsis:</h3>
