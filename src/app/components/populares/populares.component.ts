@@ -8,7 +8,7 @@ import { PeliculasService } from 'src/app/services/peliculas.service';
 })
 export class PopularesComponent implements OnInit {
 
-  private loading = true;
+  loading = true;
   private peliculas: any[] = [];
   private basePosterUrl: string = 'http://image.tmdb.org/t/p/w300';
 

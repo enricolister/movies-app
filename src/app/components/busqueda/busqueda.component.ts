@@ -9,8 +9,8 @@ import { PeliculasService } from 'src/app/services/peliculas.service';
 })
 export class BusquedaComponent {
 
-  private texto: string;
-  private loading = true;
+  texto: string;
+  loading = true;
   private peliculas: any[] = [];
   private basePosterUrl: string = 'http://image.tmdb.org/t/p/w300';
   private backURLtoSend: string;
