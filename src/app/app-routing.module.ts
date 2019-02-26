@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { EnElCineComponent } from './components/en-el-cine/en-el-cine.component';
 import { PopNinosComponent } from './components/pop-ninos/pop-ninos.component';
 import { PeliculaDetailComponent } from './components/pelicula-detail/pelicula-detail.component';
+import { TestComponent } from './components/test/test.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent,
@@ -16,6 +17,7 @@ const routes: Routes = [
     { path: '**', pathMatch: 'full', redirectTo: 'en_el_cine' }
     ]
   },
+  { path: 'test', component: TestComponent },
   { path: 'busca/:texto', component: BusquedaComponent },
   { path: 'pelicula/:id/:backpath', component: PeliculaDetailComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }

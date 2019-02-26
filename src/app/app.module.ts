@@ -12,6 +12,7 @@ import { PopNinosComponent } from './components/pop-ninos/pop-ninos.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { PeliculaDetailComponent } from './components/pelicula-detail/pelicula-detail.component';
 import { BusquedaComponent } from './components/busqueda/busqueda.component';
+import { TestComponent } from './components/test/test.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BusquedaComponent } from './components/busqueda/busqueda.component';
     PopNinosComponent,
     LoadingComponent,
     PeliculaDetailComponent,
-    BusquedaComponent
+    BusquedaComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
